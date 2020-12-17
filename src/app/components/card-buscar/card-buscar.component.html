@@ -1,0 +1,8 @@
+<div class="card text-center">
+    <img [src]="booksBuscar.img" class="card-img-thumbnail">
+    <div class="card-body text-center">
+        <h6 class="card-title">{{ booksBuscar.nombre }}</h6>
+        <p class="card-text"><label>Autor:</label> {{ booksBuscar.autor}}</p>
+        <p><button class="btn btn-warning" (click)="llamarBook(booksBuscar)">Seleccionar</button></p>
+    </div>
+</div>

@@ -1,0 +1,14 @@
+{
+  "projects": {
+    "default": "books-qu-9b908"
+  },
+  "targets": {
+    "books-qu-9b908": {
+      "hosting": {
+        "Books-Qu": [
+          "books-qu-9b908"
+        ]
+      }
+    }
+  }
+}

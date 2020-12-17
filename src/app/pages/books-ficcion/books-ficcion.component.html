@@ -1,0 +1,6 @@
+<br>
+<div class="card-columns">
+    <div *ngFor="let booksFiccion of listabooks" class="animated fadeIn">
+        <app-card-ficcion [booksFiccion]="booksFiccion" (respuesta)="escucharHijo($event)"></app-card-ficcion>
+    </div>
+</div>

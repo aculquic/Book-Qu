@@ -1,0 +1,23 @@
+<br>
+<div class="card border-warning text-center" style="max-width: 50rem;">
+    <div class="row no-gutters">
+        <div class="col-md-4 text-center">
+            <img [src]="booksBuscar.img" class="card-img rounded img-thumbnail">
+        </div>
+        <div class="col-md-8">
+            <div class="card-body  text-center">
+                <h5 class="card-title font-weight-bold">{{ booksBuscar.nombre }}</h5>
+                <p class="card-text"><label class="font-weight-bold">Autor:</label> {{ booksBuscar.autor}}</p>
+                <p class="card-text"><label class="font-weight-bold">Editorial:</label> {{ booksBuscar.editorial}}</p>
+                <div class="form-group text-justify">
+                    <label for="exampleFormControlTextarea1" class="font-weight-bold">Descripcion: </label>
+                    <textarea class="form-control text-justify" id="exampleFormControlTextarea1" rows="6">{{ booksBuscar.descripcion}}</textarea>
+                </div>
+                <p class="card-text text-justify"><label class="font-weight-bold">Publicación:</label> {{ booksBuscar.publicacion}}</p>
+                <p class="card-text"><label class="font-weight-bold">Precio: S/ </label> {{ booksBuscar.precio}}</p>
+
+                <p><button class="btn btn-warning" (click)="regresar()">Retornar</button></p>
+            </div>
+        </div>
+    </div>
+</div>

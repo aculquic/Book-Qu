@@ -1,0 +1,40 @@
+<br>
+<div class="text-justify">
+    <h2>¡SUSCRÍBETE YA!</h2>
+    <h1>{{idSucripcion}}</h1>
+</div>
+
+<div class="card border-warning form-group col-8">
+    <br>
+    <form [formGroup]="suscrip">
+        <div formGroupName="nombreCompleto">
+
+            <div class="form-group">
+                <label class="font-weight-bold" for="nombre">Nombres: </label>
+                <input type="text" class="form-control" #nombres name="nombres" formControlName="nombre" [ngClass]="{'is-invalid': suscrip.get('nombreCompleto.nombre').invalid && suscrip.get('nombreCompleto.nombre').touched}" />
+
+                <div *ngIf="suscrip.get('nombreCompleto.nombre').errors?.required" class="invalid-feedback">
+                    Debe ingresar Nombre.
+                </div>
+                <div *ngIf="suscrip.get('nombreCompleto.nombre').errors?.minlength" class="invalid-feedback">
+                    Por lo menos debe tener 6 caracteres.
+                </div>
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="font-weight-bold" for="correo">Correo: </label>
+            <input type="text" class="form-control" #correo name="correo" formControlName="correo" placeholder="name@example.com" [ngClass]="{'is-invalid': suscrip.get('correo').invalid && suscrip.get('correo').touched}" />
+
+            <div *ngIf="suscrip.get('correo').errors?.required" class="invalid-feedback">
+                Debe ingrese Correo.
+            </div>
+            <small id="passwordHelpBlock" class="form-text text-muted">
+                Your password must be 8-20 characters long, contain letters and numbers, and must not contain spaces, special characters, or emoji.
+              </small>
+        </div>
+        <div class="text-center">
+            <button type="submit" class="btn btn-warning" (click)="enviar(nombres.value,correo.value)">Enviar</button>
+        </div>
+        <br>
+    </form>
+</div>

@@ -1,0 +1,6 @@
+<br>
+<div class="card-columns">
+    <div *ngFor="let booksBuscar of listabooks" class="animated fadeIn">
+        <app-card-buscar [booksBuscar]="booksBuscar" (respuesta)="escucharHijo($event)"></app-card-buscar>
+    </div>
+</div>

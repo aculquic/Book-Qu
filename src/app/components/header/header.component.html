@@ -1,0 +1,47 @@
+<nav class="navbar navbar-expand-lg navbar-dark bg-warning">
+    <h1><a class="navbar-brand text-body" href="#">Books Qu</a></h1>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav mr-auto">
+            <li class="nav-item active" routerLinkActive="active">
+                <a class="nav-link text-body" [routerLink]="['/inicio']"> Home <span class="sr-only">(current)</span></a>
+            </li>
+        </ul>
+        <div class="btn-group" dropdown>
+            <button id="button-basic" dropdownToggle type="button" class="btn btn-outline dropdown-toggle" aria-controls="dropdown-basic">
+              Categorías <span class="caret"></span>
+            </button>
+            <ul id="dropdown-basic" *dropdownMenu class="dropdown-menu" role="menu" aria-labelledby="button-basic">
+                <li role="menuitem"><a class="dropdown-item" [routerLink]="['/booksGeneral']">General</a>
+                </li>
+                <li role="menuitem"><a class="dropdown-item" [routerLink]="['/booksNovela']">Novela</a>
+                </li>
+                <li role="menuitem"><a class="dropdown-item" [routerLink]="['/booksFiccion']">Ficcion</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="col-sm-5">
+
+        <input type="text" class="form-control mr-sm-2" maxlength="128" placeholder="Busque aqui tus libros favoritos" (keyup.enter)="buscar(busqueda.value)" [(ngModel)]="termino" name="termino" #busqueda>
+        <tr *ngFor=" let book of listabooks ">
+            <td>{{ book.nombre }}</td>
+        </tr>
+    </div>
+    <div class="col-sm-2 ">
+        <button class="btn btn-light my-2 my-sm-0 " type="submit" (click)="buscar(busqueda.value)">Buscar
+        </button>
+
+    </div>
+    <div class="collapse navbar-collapse " id="navbarSupportedContent ">
+        <ul class="navbar-nav mr-auto ">
+            <li class="nav-item" routerLinkActive="active">
+                <a class="nav-link text-body " [routerLink]="['/suscripcion']"> Suscríbete <span class="sr-only ">(current)</span></a>
+            </li>
+        </ul>
+    </div>
+</nav>
